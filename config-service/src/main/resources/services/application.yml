@@ -1,0 +1,21 @@
+#Логирование
+logging:
+  level:
+    org.springframework.security: INFO
+
+#Так таковой предохранитель вывовов между сервисами
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
