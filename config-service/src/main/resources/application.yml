@@ -1,0 +1,19 @@
+#предналежит конфиг сервису
+#самому сервису нужна какая-то конфигурация для того
+#чтобы отдавать конфигурации остальным сервисам
+
+#локации где будут лежать другие конфигурации
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/services
+  profiles:
+    active: native
+  security:
+    user:
+      password: admin
+
+server:
+  port: 8001
